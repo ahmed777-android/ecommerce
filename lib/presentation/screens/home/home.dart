@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     homeCubit = HomeCubit.get(context);
     listItems = homeCubit.responseHome.data?.products;
-    print('list sizw -------------'+listItems!.length.toString());
+    print('list sizw -------------' + listItems!.length.toString());
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -42,7 +42,9 @@ class _HomeScreenState extends State<HomeScreen> {
             IconButton(
               icon:
                   const Icon(Icons.shopping_bag_outlined, color: Colors.black),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, cartScreen);
+              },
             ),
             IconButton(
               icon: const Icon(Icons.notifications_none_outlined,

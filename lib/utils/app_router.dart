@@ -8,9 +8,12 @@ import 'package:ecommercev2/presentation/screens/authenticate/first_screen.dart'
 import 'package:ecommercev2/presentation/screens/authenticate/login/loginscreen.dart';
 import 'package:ecommercev2/presentation/screens/authenticate/register/sugnup_screen.dart';
 import 'package:ecommercev2/presentation/screens/detials/details.dart';
+import 'package:ecommercev2/presentation/screens/home/cart_screen.dart';
 import 'package:ecommercev2/presentation/screens/home/home.dart';
 import 'package:ecommercev2/presentation/screens/home/list_screen.dart';
+import 'package:ecommercev2/presentation/screens/menu/aboutus_screen.dart';
 import 'package:ecommercev2/presentation/screens/menu/menu_screen.dart';
+import 'package:ecommercev2/presentation/screens/menu/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -55,12 +58,24 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => ListOfItems(),
         );
+      case cartScreen:
+        return MaterialPageRoute(
+          builder: (_) => CartScreen(),
+        );
       case detailScreen:
         final item = settings.arguments as Item;
         return MaterialPageRoute(
           builder: (_) => DetailScreen(
             item: item,
           ),
+        );
+      case aboutScreen:
+        return MaterialPageRoute(
+          builder: (_) => AboutUs(),
+        );
+      case profileScreen:
+        return MaterialPageRoute(
+          builder: (_) => ProfileScreen(),
         );
 
       default:

@@ -1,3 +1,4 @@
+import 'package:ecommercev2/constant/strings.dart';
 import 'package:flutter/material.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -6,8 +7,58 @@ class MenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(
-        child: Text('menu'),
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, homeScreen);
+              },
+              child: const Text(
+                'Home',
+                style: TextStyle(color: Color(0xff707070), fontSize: 25),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, profileScreen);
+              },
+              child: const Text(
+                'Profile',
+                style: TextStyle(color: Color(0xff707070), fontSize: 25),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, cartScreen);
+              },
+              child: const Text(
+                'My Orders',
+                style: TextStyle(color: Color(0xff707070), fontSize: 25),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, aboutScreen);
+              },
+              child: const Text(
+                'About Us',
+                style: TextStyle(color: Color(0xff707070), fontSize: 25),
+              ),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: InkWell(
         onTap: () {
